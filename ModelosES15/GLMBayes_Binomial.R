@@ -20,7 +20,7 @@
 # Leitura de dataset:
 
 # A. opção para ler arquivo salvo no computador
-# mydata <- read.csv2(file = "wells.csv") 
+# mydata <- read.csv(file = "wells.csv") 
 
 # B. opção para ler arquivo na web (github)
 library (readr)
