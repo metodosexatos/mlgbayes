@@ -2,28 +2,27 @@
 # Title:  BAYESIAN GENERALIZED LINEAR MODELS
 # Method: Binomial(Logistic)
 # Date:   2021/Jan/08
-# Author: AndrÈ Luis M.F. dos Santos
+# Author: Andr√© Luis M.F. dos Santos
 # e-mail: andre@metodosexatos.com.br
 # Source: www.metodosexatos.com
 #====================================================
-
-# Pacotes necess·rios:
+# Pacotes necess√°rios:
 
 # rstanarm
 # readr
 #------------------------
-# DiretÛrios e Arquivos:
+# Diret√≥rios e Arquivos:
 
-# getwd() # Qual o diretÛrio que o script est· apontando
-# list.files() # Quais arquivos est„o contidos no diretÛrio
+# getwd() # Qual o diret√≥rio que o script est√° apontando
+# list.files() # Quais arquivos est√£o contidos no diret√≥rio
 # setwd("C:/Users/andre/Downloads") # muda a pasta de destino
 #-------------------------------------------------------------
 # Leitura de dataset:
 
-# A. opÁ„o para ler arquivo salvo no computador
+# A. op√ß√£o para ler arquivo salvo no computador
 # mydata <- read.csv2(file = "wells.csv") 
 
-# B. opÁ„o para ler arquivo na web (github)
+# B. op√ß√£o para ler arquivo na web (github)
 library (readr)
 urlfile="https://raw.githubusercontent.com/metodosexatos/mlgbayes/main/DatasetsES15/wells.csv"
 mydata<-read_csv(url(urlfile)) # para csv no formato brasileiro use read_csv2
@@ -36,7 +35,7 @@ model_binomial <- stan_glm(switch ~ dist + arsenic + assoc + educ,
                            data = mydata, family = binomial())
 summary(model_binomial)
 #------------------------
-# InterpretaÁ„o dos coeficientes:
+# Interpreta√ß√£o dos coeficientes:
 
 coef <- exp(model_binomial$coefficients)
 coef
