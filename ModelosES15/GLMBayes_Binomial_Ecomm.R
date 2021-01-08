@@ -3,28 +3,28 @@
 # Method: Binomial(Logistic)
 # Case:   Ecommerce
 # Date:   2021/Jan/08
-# Author: AndrÈ Luis M.F. dos Santos
+# Author: Andr√© Luis M.F. dos Santos
 # e-mail: andre@metodosexatos.com.br
 # Source: www.metodosexatos.com
 #====================================================
-# Pacotes necess·rios:
+# Pacotes necess√°rios:
 
 # rstanarm
 # readr
 # dplyr
 #------------------------
-# DiretÛrios e Arquivos:
+# Diret√≥rios e Arquivos:
 
-# getwd() # Qual o diretÛrio que o script est· apontando
-# list.files() # Quais arquivos est„o contidos no diretÛrio
+# getwd() # Qual o diret√≥rio que o script est√° apontando
+# list.files() # Quais arquivos est√£o contidos no diret√≥rio
 # setwd("C:/Users/andre/Downloads") # muda a pasta de destino
 #-------------------------------------------------------------
 # Leitura de dataset:
 
-# A. opÁ„o para ler arquivo salvo no computador
+# A. op√ß√£o para ler arquivo salvo no computador
 # mydata <- read.csv(file = "wells.csv") 
 
-# B. opÁ„o para ler arquivo na web (github)
+# B. op√ß√£o para ler arquivo na web (github)
 library (readr)
 urlfile="https://raw.githubusercontent.com/metodosexatos/mlgbayes/main/DatasetsES15/ecomm.csv"
 mydata<-read_csv2(url(urlfile)) # para csv no formato brasileiro use read_csv2
@@ -41,7 +41,14 @@ model_binomial <- stan_glm(status ~ genero+compras+regiao+pagto+qtde+pedido,
                            data = amostra, family = binomial())
 summary(model_binomial)
 #------------------------
-# InterpretaÁ„o dos coeficientes:
+# Interpreta√ß√£o dos coeficientes:
 
 coef <- exp(model_binomial$coefficients)
 coef
+#---------------------------------------
+# Ajuste:
+
+model_binomial$ses                # erro dos coeficientes
+model_binomial$residuals          # res√≠duos
+sum(model_binomial$residuals^2)   # erro
+#---------------------------------------
