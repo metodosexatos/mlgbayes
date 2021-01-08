@@ -1,15 +1,14 @@
 #====================================================
-# Title:  BAYESIAN GENERALIZED LINEAR MODELS
-# Method: Binomial(Logistic)
+# Title:  SAMPLE (amostra)
 # Date:   2021/Jan/08
-# Author: AndrÈ Luis M.F. dos Santos
+# Author: Andr√© Luis M.F. dos Santos
 # e-mail: andre@metodosexatos.com.br
 # Source: www.metodosexatos.com
 #====================================================
-# DiretÛrios e Arquivos:
+# Diret√≥rios e Arquivos:
 
-# getwd() # Qual o diretÛrio que o script est· apontando
-# list.files() # Quais arquivos est„o contidos no diretÛrio
+# getwd() # Qual o diret√≥rio que o script est√° apontando
+# list.files() # Quais arquivos est√£o contidos no diret√≥rio
 # setwd("C:/Users/andre/Downloads") # muda a pasta de destino
 #-------------------------------------------------------------
 # Amostra
