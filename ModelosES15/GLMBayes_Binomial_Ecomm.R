@@ -52,3 +52,17 @@ model_binomial$ses                # erro dos coeficientes
 model_binomial$residuals          # resíduos
 sum(model_binomial$residuals^2)   # erro
 #---------------------------------------
+# Previsão para novos dados:
+
+genero <- c(0,0,0,0,0,0,0)
+compras <- c(1,1,1,3,1,14,2)
+regiao <- c(0,1,0,0,0,0,0)
+pagto <- c(1,1,1,1,1,0,1)
+qtde <- c(2,1,1,4,1,4,1)
+pedido <- c(300,300,300,900,400,2000,100)
+predict_data <- data.frame(genero, compras, regiao, pagto, qtde, pedido)
+predict_data[1,]
+
+new_predictions <- posterior_predict(model_binomial, predict_data, draw = 100)
+new_predictions[1:10,]
+summary(new_predictions[,1])
