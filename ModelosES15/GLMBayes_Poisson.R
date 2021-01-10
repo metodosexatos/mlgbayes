@@ -1,12 +1,12 @@
-#====================================================
+#=======================================================
 # Title:  BAYESIAN GENERALIZED LINEAR MODELS
 # Method: Poisson
-# Case:   Ecommerce
+# Case:   Experimento sobre queda de folhas de árvores
 # Date:   2021/Jan/10
 # Author: André Luis M.F. dos Santos
 # e-mail: andre@metodosexatos.com.br
 # Source: www.metodosexatos.com
-#====================================================
+#=======================================================
 # Pacotes necessários:
 
 # rstanarm
