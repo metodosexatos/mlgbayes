@@ -31,7 +31,7 @@ mydata<-read_csv2(url(urlfile)) # para csv no formato brasileiro use read_csv2#h
 # Histograma da variável dependente:
 
 k <- round(1+3.3*log10(nrow(mydata)),0) # Número de classes: Regra de Sturges
-hist(mydata$folhas, main = "Valores observados", xlab = "folhas", nclass = k, col = 5)
+hist(mydata$folhas, main = "Valores observados", xlab = "Distância", nclass = k, col = 5)
 
 #--------
 # Modelo:
@@ -48,6 +48,6 @@ coeff
 # Histograma da distribuição posterior:
 
 k <- round(1+3.3*log10(nrow(posterior_predict(model_poisson))),0) # Número de classes: Regra de Sturges
-hist(posterior_predict(model_poisson), main = "Posterior", xlab = "folhas", nclass = k, col = 5)
+hist(posterior_predict(model_poisson), main = "Posterior", xlab = "Distância", nclass = k, col = 5)
 
 
