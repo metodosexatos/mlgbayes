@@ -1,38 +1,38 @@
 #====================================================
 # Title:  BAYESIAN GENERALIZED LINEAR MODELS
 # Method: Gaussian
-# Case:   Ecommerce
+# Case:   Kid's score IQ
 # Date:   2021/Jan/11
-# Author: AndrÈ Luis M.F. dos Santos
+# Author: Andr√© Luis M.F. dos Santos
 # e-mail: andre@metodosexatos.com.br
 # Source: www.metodosexatos.com
 #====================================================
-# Pacotes necess·rios:
+# Pacotes necess√°rios:
 
 # rstanarm
 # readr
 #------------------------
-# DiretÛrios e Arquivos:
+# Diret√≥rios e Arquivos:
 
-# getwd() # Qual o diretÛrio que o script est· apontando
-# list.files() # Quais arquivos est„o contidos no diretÛrio
+# getwd() # Qual o diret√≥rio que o script est√° apontando
+# list.files() # Quais arquivos est√£o contidos no diret√≥rio
 # setwd("C:/Users/andre/Downloads") # muda a pasta de destino
 #-------------------------------------------------------------
 # Leitura de dataset:
 
-# A. opÁ„o para ler arquivo salvo no computador
+# A. op√ß√£o para ler arquivo salvo no computador
 # mydata <- read.csv(file = "ecomm.csv") 
 
-# B. opÁ„o para ler arquivo na web (github)
+# B. op√ß√£o para ler arquivo na web (github)
 library(readr)
 urlfile="https://raw.githubusercontent.com/metodosexatos/mlgbayes/main/DatasetsES15/kidiq.csv"
 mydata<-read_csv(url(urlfile)) # para csv no formato brasileiro use read_csv2#head(mydata)
 #str(mydata)
 
 #------------
-# Histograma da vari·vel dependente:
+# Histograma da vari√°vel dependente:
 
-k <- round(1+3.3*log10(nrow(mydata)),0) # N˙mero de classes: Regra de Sturges
+k <- round(1+3.3*log10(nrow(mydata)),0) # N√∫mero de classes: Regra de Sturges
 hist(mydata$kid_score, main = "", xlab = "", nclass = k, col = 5)
 #------------
 # Modelo:
