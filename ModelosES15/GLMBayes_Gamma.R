@@ -39,8 +39,13 @@ model_gamma2 <- update(model_gamma, formula = . ~ log_plasma + lot_id)
 #------------------------------------------------------
 # Coeficientes:
 
-coef1 <- data.frame(model_gamma1$coefficients, row.names = c("Intercepto", "Plasma"))
-colnames(coef1) <- "Model1"
-coef2 <- data.frame(model_gamma2$coefficients, row.names = c("Intercepto", "Plasma", "Lote"))
-colnames(coef2) <- "Model2"
+coef1 <- rbind(model_gamma1$coefficients[1],exp(model_gamma1$coefficients[2]))
+row.names(coef1) <- c("Intercepto", "Plasma")
+colnames(coef1) <- "Modelo1"
+coef1
+
+coef2 <- rbind(model_gamma2$coefficients[1],exp(model_gamma2$coefficients[2]), model_gamma2$coefficients[3])
+row.names(coef2) <- c("Intercepto", "Plasma", "Lote")
+colnames(coef2) <- "Modelo2"
+coef2
 merge(coef1, coef2, by="row.names", all = TRUE)
