@@ -31,12 +31,14 @@ library(rstanarm)
 model_gamma <- stan_glm(clot_time ~ log_plasma * lot_id, data = mydata,
                         family = Gamma, seed = 12345)
 print(model_gamma, digits = 3)
-
 #------------------------------------------------------
 # Modelo sem interação:
-model_gamma1 <- update(model_gamma, formula = . ~ log_plasma)
 
+model_gamma1 <- update(model_gamma, formula = . ~ log_plasma)
+model_gamma2 <- update(model_gamma, formula = . ~ log_plasma + lot_id)
+#------------------------------------------------------
 # Coeficientes:
+
 coef1 <- data.frame(model_gamma1$coefficients, row.names = c("Intercepto", "Plasma"))
 colnames(coef1) <- "Model1"
 coef2 <- data.frame(model_gamma2$coefficients, row.names = c("Intercepto", "Plasma", "Lote"))
